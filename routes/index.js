@@ -17,7 +17,7 @@ function makeAction(name) {
 function process(req, res, name) {
     var page = site.pages[name];
     
-    res.render('page', { title: page.title, text: page.text, parts: page.parts });
+    res.render('page', { site: site, page: page });
 }
 
 module.exports = router;
