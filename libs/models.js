@@ -1,13 +1,12 @@
 
 
 function completePages(site, pages) {
-    pages.forEach(function (page) {
-        page.site = site;
-    });
+    for (var n in pages)
+        pages[n].site = site;
 }
 
 function completeModel(model) {
-    if (model.pages && Array.isArray(model.pages))
+    if (model.pages)
         completePages(model, model.pages);
 }
 
