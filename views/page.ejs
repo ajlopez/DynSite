@@ -2,11 +2,9 @@
 <% if (page.text) { %>
     <p><%= page.text %></p>
 <% } %>
-<% if (page.parts)
-        page.parts.forEach(function (part) {
-            var type = part.type || 'text'; %>
-            <%- render('part-' + type, { part: part, site: site }) %>
+<% if (page.parts) { %>
+<%- render('parts', { parts: page.parts } ) %>
 <%
-        });
+   }
 %>
 <% include footer %>

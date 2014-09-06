@@ -21,8 +21,15 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+function render(name, model) {
+    if (model && !model.render)
+        model.render = render;
+        
+    return templates.render(name, model);
+}
+
 app.use(function (req, res, next) {
-    res.locals.render = templates.render;
+    res.locals.render = render;
     next();
 });
 
