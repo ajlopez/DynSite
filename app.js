@@ -4,6 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var templates = require('./libs/templates');
 
 var routes = require('./routes/index');
 
@@ -19,6 +20,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function (req, res, next) {
+    res.locals.render = templates.render;
+    next();
+});
 
 app.use('/', routes);
 

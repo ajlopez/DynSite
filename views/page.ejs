@@ -3,8 +3,9 @@
     <p><%= page.text %></p>
 <% } %>
 <% if (page.parts)
-        page.parts.forEach(function (part) { %>
-            <% include part %>
+        page.parts.forEach(function (part) {
+            var type = part.type || 'text'; %>
+            <%- render('part-' + type, { part: part, site: site }) %>
 <%
         });
 %>

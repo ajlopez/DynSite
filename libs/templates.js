@@ -11,7 +11,7 @@ function render(name, model, options) {
     if (options.directory)
         filename = path.join(options.directory, name + '.tpl');
     else
-        filename = name + '.tpl';
+        filename = path.join('templates', name + '.tpl');
         
     var template = fs.readFileSync(filename).toString();
     
