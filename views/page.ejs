@@ -2,9 +2,8 @@
     <p><%= text %></p>
     <% if (parts)
         parts.forEach(function (part) { %>
-        <h2><%= part.title %></h2>
-        <p><%= part.text %></p>
-        <%   
+            <% include part %>
+<%
         });
     %>
 <% include footer %>

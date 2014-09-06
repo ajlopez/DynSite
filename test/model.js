@@ -12,3 +12,4 @@ exports['complete site in model'] = function (test) {
     test.strictEqual(model.pages.home.site, model);
     test.strictEqual(model.pages.about.site, model);
 }
+
