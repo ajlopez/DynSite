@@ -1,5 +1,10 @@
 {
     "title": "Dynamic Site",
+    "links": [
+        { "title": "Home", "page": "home" },
+        { "title": "About", "page": "about" },
+        { "title": "Contact", "page": "contact" }
+    ],
     "pages": {
         "home": "$home",
         "about": "$about",
